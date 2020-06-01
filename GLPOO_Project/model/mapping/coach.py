@@ -4,7 +4,7 @@ import uuid
 from sqlalchemy import Colum, String, Integer
 
 class Coach(Base) :
-	__tablename__ = 'admin'
+	__tablename__ = 'coach'
 
 
 	id = Column(String(36), default=str(uuid.uuid4()), primary_key=True)

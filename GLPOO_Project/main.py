@@ -1,14 +1,11 @@
 import logging
 import sys
+
 from model.database import DatabaseEngine
+from controller.gym_controller import GymController
+from controller.admin_controller import AdminController
 
-from controller.admin_controller
-from controller.gym_controller
-from controller.machine_controller
-
-
-
-from vue.root_frame
+from view.main_frame import MainFrame
 
 
 def main() :
@@ -44,12 +41,19 @@ def main() :
 	debug_logger.info("Init database")
 	database_engine = DatabaseEngine(url='sqlite:///database.db')
 	database_engine.create_database()
-	
+
 	#Controller
+	gym_controller = GymController(database_engine)
+	admin_controller = AdminController(database_engine)
 
 	#Vue
+	root = MainFrame(gym_controller, admin_controller)
+	root.master.title("Gym'Administration - Desktop App")
+	root.show_menu()
 
 	#Start
+	root.mainloop()
+
 
 if __name__ == "__main__":
 	main()

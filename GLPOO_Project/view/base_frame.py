@@ -34,3 +34,6 @@ class BaseFrame(Frame):
 			entry.bind('<KeyRelease>', partial(validate_callback, entry=entry))
 		entry.grid(row=row, column=1, columnspan=columnspan)
 		return entry
+
+	def show_menu(self) :
+		self._main_frame.show_menu()

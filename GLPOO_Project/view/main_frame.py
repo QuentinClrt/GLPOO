@@ -2,7 +2,8 @@ from tkinter import *
 
 from view.menu_frame import MenuFrame
 from view.frames.admin_frame import AdminFrame
-from view.frames.list_gym_frame import ListGymFrame
+from view.frames.gym_frame import GymFrame
+from view.frames.create_admin_frame import CreateAdminFrame
 
 
 class MainFrame(Frame) :
@@ -14,17 +15,23 @@ class MainFrame(Frame) :
 		self._menu_frame = MenuFrame(self)
 		self._frames = []
 
-	def list_gym_frame(self) :
+	def gym_frame(self) :
 		self.hide_frames()
-		list_gym_frame = ListGymFrame(self._gym_controller, self, person_type='gym')
-		list_gym_frame.show()
-		self._frames.append(list_gym_frame)
+		gym_frame = GymFrame(self._gym_controller, self)
+		gym_frame.show()
+		self._frames.append(gym_frame)
 
 	def admin_frame(self):
 		self.hide_frames()
-		admin_frame = AdminFrame(self._admin_controller, self, person_type='admin')
+		admin_frame = AdminFrame(self._admin_controller, self)
 		admin_frame.show()
 		self._frames.append(admin_frame)
+
+	def create_admin_frame(self):
+		self.hide_frames()
+		create_admin_frame = CreateAdminFrame(self._admin_controller, self)
+		create_admin_frame.show()
+		self._frames.append(create_admin_frame)
 
 	def hide_frames(self):
 		for frame in self._frames:

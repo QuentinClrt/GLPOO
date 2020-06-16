@@ -1,5 +1,6 @@
 from tkinter import *
 from view.base_frame import BaseFrame
+from controller.gym_controller import GymController
 
 class MenuFrame(BaseFrame):
 

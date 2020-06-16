@@ -2,7 +2,7 @@ import re
 import logging
 
 
-from model.dao.gym_dao import GymDao
+from model.dao.gym_dao import GymDAO
 
 from exceptions import Error, InvalidData
 

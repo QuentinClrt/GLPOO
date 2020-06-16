@@ -30,7 +30,7 @@ class GymDAO(DAO):
 		try:
 			logging.debug("GymDAO:get_all()")
 			return self._database_session.query(Gym).filter_by(Gym.name).all()
-		except NoResultFound
+		except NoResultFound:
 			logging.error("GymDAO:get_all()")
 			raise ResourceNotFound()
 

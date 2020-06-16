@@ -1,7 +1,7 @@
 from model.mapping import Base
 import uuid
 
-from sqlalchemy import Colum, String, Integer
+from sqlalchemy import Column, String, Integer
 
 class Admin(Base) :
 	__tablename__ = 'admin'
@@ -12,7 +12,7 @@ class Admin(Base) :
 	firstname = Column(String(30), nullable=False)
 	lastname = Column(String(30), nullable=False)
 	email = Column(String(128), nullable=False, unique=True)
-	phone_number = Column(Integer(10), nullable=False, unique=True)
+	phone_number = Column(Integer(), nullable=False, unique=True)
 	passwd = Column(String(256), nullable=False)
 
 

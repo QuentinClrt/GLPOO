@@ -35,10 +35,10 @@ def main() :
 
 
 	#Running app
-	debug_logger.info("Running Gym'Administration app")
+	logging.debug("Running Gym'Administration app")
 
 	#Init database
-	debug_logger.info("Init database")
+	logging.debug("Init database")
 	database_engine = DatabaseEngine(url='sqlite:///database.db')
 	database_engine.create_database()
 

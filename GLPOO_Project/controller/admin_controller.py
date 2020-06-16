@@ -2,7 +2,7 @@ import re
 import logging
 
 
-from model.dao.admin_dao import AdminDao
+from model.dao.admin_dao import AdminDAO
 
 from exceptions import Error, InvalidData
 

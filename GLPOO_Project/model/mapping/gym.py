@@ -1,10 +1,10 @@
 from model.mapping import Base
 import uuid
 
-from sqlalchemy import Colum, String, Integer
+from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
-from model.mapping.coach import coaches_pop
-from model.mapping.machine import machines_pop
+from model.mapping.coach import Coach
+from model.mapping.machine import Machine
 
 class Gym(Base) :
 	__tablename__ = 'gym'
@@ -13,17 +13,17 @@ class Gym(Base) :
 	id = Column(String(36), default=str(uuid.uuid4()), primary_key=True)
 
 	name = Column(String(128), nullable=False)
-	phone_number = Column(Integer(10), nullable=False, unique=True)
+	phone_number = Column(Integer(), nullable=False, unique=True)
 	address = Column(String(256), nullable=False)
 
-	machines = relationship("Machine", back_populates="machines_pop")
-	coaches = relationship("Coaches", back_populates="coaches_pop")
+	machines = relationship("Machine", back_populates="Machine")
+	coaches = relationship("Coaches", back_populates="Coach")
 
 	def __repr__(self) :
 		return "<Gym(%d, %s, %s, %d)>" % (self.id, self.name, self.address, self.phone_number)
 
 	def to_dict(self) :
-		_data {
+		_data = {
 			"id" : self.id,
 			"name" : self.name,
 			"phone_number" : self.phone_number,

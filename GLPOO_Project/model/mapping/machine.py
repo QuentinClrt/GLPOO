@@ -1,7 +1,7 @@
 from model.mapping import Base
 import uuid
 
-from sqlalchemy import Colum, String, Integer
+from sqlalchemy import Column, String, Integer
 
 class Machine(Base) :
 	__tablename__ = 'machine'

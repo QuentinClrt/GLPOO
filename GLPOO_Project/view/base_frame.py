@@ -5,7 +5,7 @@ class BaseFrame(Frame):
 	"""docstring for BaseFrame"""
 
 	def __init__(self, main_frame):
-		super().__init__(main_frame.master, width=500)
+		super().__init__(main_frame.master, width=350)
 		self._main_frame = main_frame
 		
 	def show(self) :

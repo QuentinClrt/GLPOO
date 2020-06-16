@@ -44,3 +44,9 @@ class Gym(Base) :
 									 "email" : coach.email })
 
 		return _data
+
+	def set_machine(self, name: str, brand: str, provider: str, muscular_group: str):
+		self.machine = Machine(name=name, brand=brand, provider=provider, muscular_group=muscular_group)
+
+	def set_coach(self, firstname: str, lastname: str, phone_number: str, email: str, degree: str, specialties: str):
+		self.coach = Coach(firstname=firstname, lastname=lastname, email=email, phone_number=phone_number, degree=degree, specialties=specialties)

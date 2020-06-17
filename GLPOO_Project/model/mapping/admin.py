@@ -11,20 +11,20 @@ class Admin(Base) :
 	
 	firstname = Column(String(30), nullable=False)
 	lastname = Column(String(30), nullable=False)
-	email = Column(String(128), nullable=False, unique=True)
+	login = Column(String(128), nullable=False, unique=True)
 	phone_number = Column(String(10), nullable=False, unique=True)
-	passwd = Column(String(256), nullable=False)
+	password = Column(String(256), nullable=False)
 
 
 	def __repr__(self) :
-		return "<Admin(%d, %s, %s, %s, %s, %s)>" % (self.id, self.firstname, self.lastname.upper(), self.email, self.phone_number, self.passwd)
+		return "<Admin(%d, %s, %s, %s, %s, %s)>" % (self.id, self.firstname, self.lastname.upper(), self.login, self.phone_number, self.password)
 
 	def to_dict(self) :
 		return {
 			"id" : self.id,
 			"firstname" : self.firstname,
 			"lastname" : self.lastname,
-			"email" : self.email,
+			"login" : self.login,
 			"phone_number" : self.phone_number,
-			"passwd" : self.passwd
+			"password" : self.password
 		}

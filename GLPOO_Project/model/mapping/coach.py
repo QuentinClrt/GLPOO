@@ -2,6 +2,7 @@ from model.mapping import Base
 import uuid
 
 from sqlalchemy import Column, String, Integer
+from sqlalchemy.orm import relationship
 
 class Coach(Base) :
 	__tablename__ = 'coach'
@@ -15,6 +16,8 @@ class Coach(Base) :
 	phone_number = Column(Integer(), nullable=False, unique=True)
 	degree = Column(String(128))
 	specialties = Column(String(256))
+	gym = relationship("Gym", back_populates="coaches")
+
 
 	def __repr__(self) :
 		return "<Coach(%d, %s, %s, %s, %d, %s, %s)>" % (self.id, self.firstname, self.lastname.upper(), self.email, self.phone_number, self.degree, self.specialties)

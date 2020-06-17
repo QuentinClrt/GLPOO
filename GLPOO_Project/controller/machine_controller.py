@@ -19,8 +19,8 @@ class MachineController:
 				machine = dao.create(data)
 				machine_data = machine.to_dict()
 				return machine_data
-			except Error as error:
-				raise error
+		except Error as error:
+			raise error
 
 	def list_machines(self, person_type=None):
 		with self._database_engine.new_session() as session:

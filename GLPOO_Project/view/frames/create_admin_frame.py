@@ -33,11 +33,11 @@ class CreateAdminFrame(BaseFrame) :
 	def validate(self) :
 
 		data = {
-			"login" : "Anonymous",
-			"password" : "Anonymous",
 			"firstname" : "Anonymous",
 			"lastname" : "Anonymous",
-			"phone_number" : "0666666666"
+			"login" : "Anonymous",
+			"phone_number" : "0666666666",
+			"password" : "Anonymous"
 		}
 
 		data['login'] = self.login.get()
@@ -47,7 +47,7 @@ class CreateAdminFrame(BaseFrame) :
 		data['phone_number'] = self.phone_number.get()
 
 		try:
-			validated_data = self._admin_controller.create_admin(data)
+			self._admin_controller.create_admin(data)
 			messagebox.showinfo("Success", "Administrator created !")
 
 		except Error as e:

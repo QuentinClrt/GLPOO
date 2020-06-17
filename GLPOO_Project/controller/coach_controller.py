@@ -19,8 +19,8 @@ class CoachController:
 				coach = dao.create(data)
 				coach_data = coach.to_dict()
 				return coach_data
-			except Error as error:
-				raise error
+		except Error as error:
+			raise error
 
 	def list_coaches(self, person_type=None):
 		with self._database_engine.new_session() as session:

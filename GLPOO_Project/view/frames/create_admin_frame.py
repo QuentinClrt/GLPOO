@@ -1,8 +1,10 @@
 
+from tkinter import messagebox
 from tkinter import *
 
 from view.base_frame import BaseFrame
 from controller.admin_controller import AdminController
+from exceptions import Error
 
 class CreateAdminFrame(BaseFrame) :
 
@@ -43,3 +45,13 @@ class CreateAdminFrame(BaseFrame) :
 		data['firstname'] = self.firstname.get()
 		data['lastname'] = self.lastname.get()
 		data['phone_number'] = self.phone_number.get()
+
+		try:
+			validated_data = self._admin_controller.create_admin(data)
+			messagebox.showinfo("Success", "Administrator created !")
+
+		except Error as e:
+			messagebox.showerror("Error", str(e))
+			return
+
+		self.show_menu()

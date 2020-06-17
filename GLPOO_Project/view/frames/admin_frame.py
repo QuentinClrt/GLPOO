@@ -13,7 +13,7 @@ class AdminFrame(BaseFrame) :
 	def create_widgets(self):
 		self.title=Label(self, text="Admin Interface", height=3)
 
-		self.create_admin = Button(self, bg="grey", fg="white", text="Create an admin", width=30, height=2, pady=6, padx=15, command=self._main_frame.create_admin_frame) #command=self._main_frame.create_admin) # command=self._main_frame.list_gym_frame)
+		self.create_admin = Button(self, bg="grey", fg="white", text="Create an admin", width=30, height=2, pady=6, padx=15, command=self._main_frame.create_admin_frame)
 		self.email_admin = Button(self, bg="grey", fg="white", text="Send email to all admins", width=30, height=2, pady=6, padx=15)
 
 		self.title.grid(row=1, column=2)

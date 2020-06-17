@@ -13,9 +13,9 @@ class GymFrame(BaseFrame) :
 	def create_widgets(self):
 		self.title=Label(self, text="Gym Informations", height=3)
 
-		self.gyms_list = Button(self, bg="grey", fg="white", text="List Gyms", width=25, height=2, pady=6, padx=15)
-		self.coach_list = Button(self, bg="grey", fg="white", text="List Coaches", width=25, height=2, pady=6, padx=15)
-		self.machine_list = Button(self, bg="grey", fg="white", text="List Machines", width=25, height=2, pady=6, padx=15)
+		self.gyms_list = Button(self, bg="grey", fg="white", text="List Gyms", width=25, height=2, pady=6, padx=15, command=self._main_frame.list_gyms_frame)
+		self.coach_list = Button(self, bg="grey", fg="white", text="List Coaches", width=25, height=2, pady=6, padx=15, command=self._main_frame.list_coaches_frame)
+		self.machine_list = Button(self, bg="grey", fg="white", text="List Machines", width=25, height=2, pady=6, padx=15,  command=self._main_frame.list_machines_frame)
 
 		self.title.grid(row=1, column = 2)
 		self.gyms_list.grid(row=2, column=1)

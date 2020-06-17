@@ -4,16 +4,24 @@ from view.menu_frame import MenuFrame
 from view.frames.admin_frame import AdminFrame
 from view.frames.gym_frame import GymFrame
 from view.frames.create_admin_frame import CreateAdminFrame
+from view.frames.list_coaches_frame import ListCoachesFrame
+from view.frames.list_machines_frame import ListMachinesFrame
+from view.frames.list_gyms_frame import ListGymsFrame
 
 
 class MainFrame(Frame) :
 
-	def __init__(self, gym_controller, admin_controller, master=None) :
+	def __init__(self, gym_controller, admin_controller, coach_controller, machine_controller, master=None) :
 		super().__init__(master)
 		self._gym_controller = gym_controller
 		self._admin_controller = admin_controller
+		self._coach_controller = coach_controller
+		self._machine_controller = machine_controller
 		self._menu_frame = MenuFrame(self)
 		self._frames = []
+
+
+	#Personalized frames
 
 	def gym_frame(self) :
 		self.hide_frames()
@@ -32,6 +40,26 @@ class MainFrame(Frame) :
 		create_admin_frame = CreateAdminFrame(self._admin_controller, self)
 		create_admin_frame.show()
 		self._frames.append(create_admin_frame)
+
+	def list_coaches_frame(self):
+		self.hide_frames()
+		list_coaches_frame = ListCoachesFrame(self._coach_controller, self)
+		list_coaches_frame.show()
+		self._frames.append(list_coaches_frame)
+
+	def list_machines_frame(self):
+		self.hide_frames()
+		list_machines_frame = ListMachinesFrame(self._machine_controller, self)
+		list_machines_frame.show()
+		self._frames.append(list_machines_frame)
+
+	def list_gyms_frame(self):
+		self.hide_frames()
+		list_gyms_frame = ListGymsFrame(self._gym_controller, self)
+		list_gyms_frame.show()
+		self._frames.append(list_gyms_frame)
+
+
 
 	def hide_frames(self):
 		for frame in self._frames:

@@ -4,6 +4,8 @@ import sys
 from model.database import DatabaseEngine
 from controller.gym_controller import GymController
 from controller.admin_controller import AdminController
+from controller.coach_controller import CoachController
+from controller.machine_controller import MachineController
 
 from view.main_frame import MainFrame
 
@@ -45,9 +47,11 @@ def main() :
 	#Controller
 	gym_controller = GymController(database_engine)
 	admin_controller = AdminController(database_engine)
+	coach_controller = CoachController(database_engine)
+	machine_controller = MachineController(database_engine)
 
 	#Vue
-	root = MainFrame(gym_controller, admin_controller)
+	root = MainFrame(gym_controller, admin_controller, coach_controller, machine_controller)
 	root.master.title("Gym'Administration - Desktop App")
 	root.show_menu()
 

@@ -4,6 +4,7 @@ from view.menu_frame import MenuFrame
 from view.frames.admin_frame import AdminFrame
 from view.frames.gym_frame import GymFrame
 from view.frames.create_admin_frame import CreateAdminFrame
+from view.frames.email_admin_frame import EmailAdminFrame
 from view.frames.list_coaches_frame import ListCoachesFrame
 from view.frames.list_machines_frame import ListMachinesFrame
 from view.frames.list_gyms_frame import ListGymsFrame
@@ -34,6 +35,12 @@ class MainFrame(Frame) :
 		admin_frame = AdminFrame(self._admin_controller, self)
 		admin_frame.show()
 		self._frames.append(admin_frame)
+
+	def email_admin_frame(self):
+		self.hide_frames()
+		email_admin_frame = EmailAdminFrame(self._admin_controller, self)
+		email_admin_frame.show()
+		self._frames.append(email_admin_frame)
 
 	def create_admin_frame(self):
 		self.hide_frames()

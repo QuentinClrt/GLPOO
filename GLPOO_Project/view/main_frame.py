@@ -3,11 +3,14 @@ from tkinter import *
 from view.menu_frame import MenuFrame
 from view.frames.admin_frame import AdminFrame
 from view.frames.gym_frame import GymFrame
+
 from view.frames.create_admin_frame import CreateAdminFrame
 from view.frames.email_admin_frame import EmailAdminFrame
+
+from view.frames.create_coach_frame import CreateCoachFrame
+from view.frames.create_machine_frame import CreateMachineFrame
+from view.frames.create_gym_frame import CreateGymFrame
 from view.frames.list_coaches_frame import ListCoachesFrame
-from view.frames.list_machines_frame import ListMachinesFrame
-from view.frames.list_gyms_frame import ListGymsFrame
 
 
 class MainFrame(Frame) :
@@ -36,6 +39,7 @@ class MainFrame(Frame) :
 		admin_frame.show()
 		self._frames.append(admin_frame)
 
+
 	def email_admin_frame(self):
 		self.hide_frames()
 		email_admin_frame = EmailAdminFrame(self._admin_controller, self)
@@ -48,23 +52,29 @@ class MainFrame(Frame) :
 		create_admin_frame.show()
 		self._frames.append(create_admin_frame)
 
+	def create_coach_frame(self):
+		self.hide_frames()
+		create_coach_frame = CreateCoachFrame(self._coach_controller, self)
+		create_coach_frame.show()
+		self._frames.append(create_coach_frame)
+
+	def create_machine_frame(self):
+		self.hide_frames()
+		create_machine_frame = CreateMachineFrame(self._machine_controller, self)
+		create_machine_frame.show()
+		self._frames.append(create_machine_frame)
+
+	def create_gym_frame(self):
+		self.hide_frames()
+		create_gym_frame = CreateGymFrame(self._gym_controller, self)
+		create_gym_frame.show()
+		self._frames.append(create_gym_frame)
+
 	def list_coaches_frame(self):
 		self.hide_frames()
 		list_coaches_frame = ListCoachesFrame(self._coach_controller, self)
 		list_coaches_frame.show()
 		self._frames.append(list_coaches_frame)
-
-	def list_machines_frame(self):
-		self.hide_frames()
-		list_machines_frame = ListMachinesFrame(self._machine_controller, self)
-		list_machines_frame.show()
-		self._frames.append(list_machines_frame)
-
-	def list_gyms_frame(self):
-		self.hide_frames()
-		list_gyms_frame = ListGymsFrame(self._gym_controller, self)
-		list_gyms_frame.show()
-		self._frames.append(list_gyms_frame)
 
 
 

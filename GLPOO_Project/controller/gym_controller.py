@@ -25,7 +25,8 @@ class GymController:
 	def list_gyms(self, person_type=None):
 		with self._database_engine.new_session() as session:
 			gyms = GymDAO(session).get_all()
-			gyms_data = [gyms.to_dict() for gym in gyms]
+			print(gyms)
+			gyms_data = [gyms.to_dict('dict') for gym in gyms]
 		return gyms_data
 
 	def get_gym(self, gym_id):

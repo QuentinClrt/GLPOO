@@ -29,9 +29,19 @@ class CoachDAO(DAO):
 	def get_all(self):
 		try: 
 			logging.debug("CoachDAO:get_all()")
-			return self._database_session.query(Coach).filter_by(Admin.firstname).all()
+			return self._database_session.query(Coach).order_by(Coach.firstname).all()
 		except NoResultFound:
 			logging.error("CoachDAO:get_all()")
+			raise ResourceNotFound()
+
+
+	def gather_all_informations(self):
+		try:
+			logging.debug("CoachDAO:gather_all_informations()")
+			fields = ['id', 'email', 'phone_number']
+			return self._database_session.query(Coach.id, Coach.email, Coach.phone_number, Coach.lastname).all()
+		except NoResultFound :
+			logging.error("CoachDAO:gather_all_informations()")
 			raise ResourceNotFound()
 
 	def get_by_name(self, firstname: str, lastname: str):
@@ -52,7 +62,7 @@ class CoachDAO(DAO):
 			logging.error("CoachDAO:create() on firstname : {}, lastname {}".format(data['firstname'], data['lastname']))
 			raise Error("ERROR (during creation) : Coach already exist.")
 
-		return admin
+		return coach
 
 	def update(self, coach: Coach, data: dict):
 		if 'firstname' in data:

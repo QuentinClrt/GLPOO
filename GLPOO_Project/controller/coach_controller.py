@@ -25,8 +25,13 @@ class CoachController:
 	def list_coaches(self, person_type=None):
 		with self._database_engine.new_session() as session:
 			coaches = CoachDAO(session).get_all()
-			coaches_data = [coaches.to_dict() for coach in coaches]
-		return coaches_data
+			print(coaches)
+		return coaches
+
+	def gather_informations(self, person_type = None) :
+		with self._database_engine.new_session() as session :
+			coaches = CoachDAO(session).gather_all_informations()
+		return coaches
 	
 	def get_coach(self, coach_id):
 		with self._database_engine.new_session() as session:

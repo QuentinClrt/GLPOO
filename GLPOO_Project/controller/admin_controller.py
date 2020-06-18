@@ -1,6 +1,8 @@
 import re
 import logging
 
+import json
+
 
 from model.dao.admin_dao import AdminDAO
 
@@ -25,8 +27,13 @@ class AdminController:
 	def list_admins(self, person_type=None):
 		with self._database_engine.new_session() as session:
 			admins = AdminDAO(session).get_all()
-			admins_data = [admins.to_dict() for admin in admins]
-		return admins_data
+		return admins
+
+
+	def get_mail(self, person_type = None) :
+		with self._database_engine.new_session() as session :
+			emails = AdminDAO(session).get_all_mail()
+			return emails
 
 	def get_admin(self, admin_id):
 		with self._database_engine.new_session() as session:

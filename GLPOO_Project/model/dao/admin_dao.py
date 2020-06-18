@@ -29,7 +29,7 @@ class AdminDAO(DAO):
 	def get_all(self):
 		try:
 			logging.debug("AdminDAO:get_all()")
-			return self._database_session.query(Admin).filter_by(Admin.firstname).all()
+			return self._database_session.query(Admin).order_by(Admin.firstname).all()
 		except NoResultFound:
 			logging.error("AdminDAO:get_all()")
 			raise ResourceNotFound()
@@ -41,6 +41,14 @@ class AdminDAO(DAO):
 		except NoResultFound:
 			logging.error("AdminDAO:get_by_name() on login : {}, firstname : {}, lastname : {}".format(login, firstname, lastname))
 			raise ResourceNotFound()
+
+
+	def get_all_mail(self):
+		try:
+			return self._database_session.query(Admin.login).all()
+		except NoResultFound :
+			raise ResourceNotFound()
+
 
 	def create(self, data: dict):
 		try:

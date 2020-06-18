@@ -38,6 +38,7 @@ class Gym(Base) :
 			_data['machines'].append({"id" : machine.id,
 									  "name" : machine.name,
 									  "brand" : machine.brand })
+
 		for coach in self.coaches:
 			_data['coaches'].append({"id" : coach.id,
 									 "firstname" : coach.firstname,

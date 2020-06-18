@@ -17,7 +17,7 @@ class Admin(Base) :
 
 
 	def __repr__(self) :
-		return "<Admin(%d, %s, %s, %s, %s, %s)>" % (self.id, self.firstname, self.lastname.upper(), self.login, self.phone_number, self.password)
+		return "[%s, %s, %s, %s, %s, %s]" % (self.id, self.firstname, self.lastname.upper(), self.login, self.phone_number, self.password)
 
 	def to_dict(self) :
 		return {

@@ -15,24 +15,37 @@ class EmailAdminFrame(BaseFrame) :
 
 	def create_widgets(self):
 		self.title=Label(self, text="Send email to all adminstrators", height=3)
-		self.mail_content = self.create_entry("Mail content : ", row=2, columnspan=2, cursor="arrow", justify="center", selectborderwidth=3)
+		self.mail_content = self.create_entry("Mail content : ", row=4, columnspan=10, cursor="arrow", justify="center", selectborderwidth=10)
 		self.validate = Button(self, bg="green", fg="white", text="Validate", width=14, height=1, pady=4, padx=10, command=self.validate)
 
+		#If we get all the emails without any problem, it will be possible to then validate and "send an email", else, you can not validate
+		try :
+			emails = self._admin_controller.get_mail()
+
+			self.list_emails = Text(self, width=30, height=10)
+
+
+			for i in emails:
+				self.list_emails.insert(END, i[0]+'\n')
+
+			self.list_emails.grid(row=2, column=2)
+
+		except Error as e:
+			self.validate.config(state=DISABLED)
+			messagebox.showerror("Error", str(e))
+
+
 		self.title.grid(row=1, column=2)
-		self.mail_content.grid(row=2, column=2)
-		self.validate.grid(row=3, column=3)
+		self.mail_content.grid(row=4, column=2)
+		self.validate.grid(row=5, column=3)
 
 
 	def validate(self):
 
 		mail_content = self.mail_content.get()
 
-		#print(mail_content)
-
 		try:
-			#validated_data = self._admin_controller.send_email(data)
-
-			#SEND EMAIL... (Easter Egg)
+			#SEND EMAIL... (Easter Egg). This part was created to list admins only because send emails to unknown addresses is forbidden (cf. phising next)
 
 			messagebox.showinfo("Success", "Email sent to all administrators !")
 

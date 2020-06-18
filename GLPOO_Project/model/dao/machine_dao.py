@@ -16,7 +16,7 @@ Machine Mapping DAO
 """
 class MachineDAO(DAO):
 	def __init__(self, database_session):
-		super.__init__(database_session)
+		super().__init__(database_session)
 
 	def get(self, id):
 		try:

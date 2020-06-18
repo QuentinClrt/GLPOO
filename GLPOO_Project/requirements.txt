@@ -1,0 +1,4 @@
+Required packages :
+
+- sqlalchemy
+- python3

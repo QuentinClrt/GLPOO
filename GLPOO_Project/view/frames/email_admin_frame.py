@@ -14,7 +14,7 @@ class EmailAdminFrame(BaseFrame) :
 		self.create_widgets()
 
 	def create_widgets(self):
-		self.title=Label(self, text="Send email to all adminstrators", height=3)
+		self.title=Label(self, text="Send email to adminstrators", height=3)
 		self.mail_content = self.create_entry("Mail content : ", row=4, columnspan=10, cursor="arrow", justify="center", selectborderwidth=10)
 		self.validate = Button(self, bg="green", fg="white", text="Validate", width=14, height=1, pady=4, padx=10, command=self.validate)
 
@@ -22,7 +22,7 @@ class EmailAdminFrame(BaseFrame) :
 		try :
 			emails = self._admin_controller.get_mail()
 
-			self.list_emails = Text(self, width=30, height=10)
+			self.list_emails = Text(self, width=40, height=10)
 
 
 			for i in emails:
@@ -47,7 +47,7 @@ class EmailAdminFrame(BaseFrame) :
 		try:
 			#SEND EMAIL... (Easter Egg). This part was created to list admins only because send emails to unknown addresses is forbidden (cf. phising next)
 
-			messagebox.showinfo("Success", "Email sent to all administrators !")
+			messagebox.showinfo("Success", "Email sent to administrators !")
 
 		except Error as e:
 			messagebox.showerror("Error", str(e))

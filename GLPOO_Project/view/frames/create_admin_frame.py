@@ -16,7 +16,7 @@ class CreateAdminFrame(BaseFrame) :
 	def create_widgets(self):
 		self.title=Label(self, text="Admin creation", height=3)
 		self.login = self.create_entry("Email (=login) : ", row=2, columnspan=2)
-		self.password = self.create_entry("Password : ", row=3, columnspan=4)
+		self.password = self.create_entry("Password : ", row=3, columnspan=4, show="*")
 		self.firstname = self.create_entry("Firstname : ", row=4, columnspan=6)
 		self.lastname = self.create_entry("Lastname : ", row=5, columnspan=8)
 		self.phone_number = self.create_entry("Phone number : ", row=6, columnspan=10)

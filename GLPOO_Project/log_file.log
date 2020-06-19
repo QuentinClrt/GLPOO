@@ -1,0 +1,59 @@
+2020-06-19 15:05:14,550 - DEBUG - Running Gym'Administration app
+2020-06-19 15:05:14,550 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:05:14,550 - DEBUG - Init database
+2020-06-19 15:05:14,550 - root - DEBUG - Init database
+2020-06-19 15:05:34,939 - DEBUG - AdminDAO:create() on login : administrator@admin.ru, firstname : admin, lastname : administrator
+2020-06-19 15:05:34,939 - root - DEBUG - AdminDAO:create() on login : administrator@admin.ru, firstname : admin, lastname : administrator
+2020-06-19 15:05:39,121 - DEBUG - Running Gym'Administration app
+2020-06-19 15:05:39,121 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:05:39,121 - DEBUG - Init database
+2020-06-19 15:05:39,121 - root - DEBUG - Init database
+2020-06-19 15:06:19,530 - DEBUG - AdminDAO:create() on login : jacqueline.admin@basicfrites.fr, firstname : jacqueline, lastname : admin
+2020-06-19 15:06:19,530 - root - DEBUG - AdminDAO:create() on login : jacqueline.admin@basicfrites.fr, firstname : jacqueline, lastname : admin
+2020-06-19 15:06:33,137 - DEBUG - Running Gym'Administration app
+2020-06-19 15:06:33,137 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:06:33,137 - DEBUG - Init database
+2020-06-19 15:06:33,137 - root - DEBUG - Init database
+2020-06-19 15:06:50,961 - DEBUG - MachineDAO:create() on name : Rear Delt, brand : MATRIX, provider : FitnessClub
+2020-06-19 15:06:50,961 - root - DEBUG - MachineDAO:create() on name : Rear Delt, brand : MATRIX, provider : FitnessClub
+2020-06-19 15:07:14,737 - ERROR - MachineDao:create() on name : Leg Curl, brand : GorillaSports, provider : GorillaSports
+2020-06-19 15:07:14,737 - root - ERROR - MachineDao:create() on name : Leg Curl, brand : GorillaSports, provider : GorillaSports
+2020-06-19 15:07:14,737 - root - ERROR - MachineDao:create() on name : Leg Curl, brand : GorillaSports, provider : GorillaSports
+2020-06-19 15:07:21,428 - DEBUG - Running Gym'Administration app
+2020-06-19 15:07:21,428 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:07:21,428 - DEBUG - Init database
+2020-06-19 15:07:21,428 - root - DEBUG - Init database
+2020-06-19 15:07:38,635 - DEBUG - MachineDAO:create() on name : Leg Curl, brand : GorillaSports, provider : GorillaSports
+2020-06-19 15:07:38,635 - root - DEBUG - MachineDAO:create() on name : Leg Curl, brand : GorillaSports, provider : GorillaSports
+2020-06-19 15:08:12,930 - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:12,930 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:12,930 - DEBUG - Init database
+2020-06-19 15:08:12,930 - root - DEBUG - Init database
+2020-06-19 15:08:20,682 - DEBUG - CoachDAO:gather_all_informations()
+2020-06-19 15:08:20,682 - root - DEBUG - CoachDAO:gather_all_informations()
+2020-06-19 15:08:29,390 - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:29,390 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:29,390 - DEBUG - Init database
+2020-06-19 15:08:29,390 - root - DEBUG - Init database
+2020-06-19 15:08:55,361 - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:55,361 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:08:55,361 - DEBUG - Init database
+2020-06-19 15:08:55,361 - root - DEBUG - Init database
+2020-06-19 15:09:33,315 - DEBUG - CoachDAO:create() on firstname : Jean, lastname Kevin
+2020-06-19 15:09:33,315 - root - DEBUG - CoachDAO:create() on firstname : Jean, lastname Kevin
+2020-06-19 15:09:35,999 - DEBUG - Running Gym'Administration app
+2020-06-19 15:09:35,999 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:09:35,999 - DEBUG - Init database
+2020-06-19 15:09:35,999 - root - DEBUG - Init database
+2020-06-19 15:11:04,529 - DEBUG - CoachDAO:create() on firstname : Pierre, lastname Dupont
+2020-06-19 15:11:04,529 - root - DEBUG - CoachDAO:create() on firstname : Pierre, lastname Dupont
+2020-06-19 15:11:06,495 - DEBUG - CoachDAO:gather_all_informations()
+2020-06-19 15:11:06,495 - root - DEBUG - CoachDAO:gather_all_informations()
+2020-06-19 15:12:24,249 - DEBUG - Running Gym'Administration app
+2020-06-19 15:12:24,249 - root - DEBUG - Running Gym'Administration app
+2020-06-19 15:12:24,249 - DEBUG - Init database
+2020-06-19 15:12:24,249 - root - DEBUG - Init database
+2020-06-19 15:12:49,658 - DEBUG - CoachDAO:create() on firstname : Nicolas, lastname ZeBoss
+2020-06-19 15:12:49,658 - root - DEBUG - CoachDAO:create() on firstname : Nicolas, lastname ZeBoss
+2020-06-19 15:12:52,405 - DEBUG - CoachDAO:gather_all_informations()
+2020-06-19 15:12:52,405 - root - DEBUG - CoachDAO:gather_all_informations()

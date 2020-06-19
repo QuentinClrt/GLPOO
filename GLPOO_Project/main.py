@@ -13,7 +13,7 @@ from view.main_frame import MainFrame
 def main() :
 
 	# here is a logging configuration with three handlers (two handlers configured on one file and one stream)
-	logger = logging.getLogger('log_file')
+	logger = logging.getLogger()
 	logger.setLevel(logging.NOTSET)
 
 	debug_logger = logging.FileHandler('log_file.log')
